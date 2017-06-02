@@ -6,7 +6,7 @@ class Items(models.Model):
     Items_Names = (
         ('R', 'Rock'),
         ('S', 'Scissors'),
-        ('P', 'Papper'),
+        ('P', 'Paper'),
     )
     Name = models.CharField(max_length=1 , choices=Items_Names)
     def __str__(self):
@@ -27,4 +27,4 @@ class Games(models.Model):
     Bet1 = models.ForeignKey(Items, related_name='firstuserbet')
     Bet2 = models.ForeignKey(Items, related_name='seconduserbet', default=1)
     def __str__(self):
-        return str(self.User1_id) + " " + str(self.User2_id)
+        return self.id
