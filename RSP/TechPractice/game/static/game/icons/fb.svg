@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="693 535 185 44">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #3b5998;
+      }
+
+      .cls-2, .cls-3 {
+        fill: #fff;
+        font-size: 20px;
+      }
+
+      .cls-2 {
+        font-family: FontAwesome;
+      }
+
+      .cls-3 {
+        font-family: Montserrat-Medium, Montserrat;
+        font-weight: 500;
+      }
+    </style>
+  </defs>
+  <g id="Group_44" data-name="Group 44" transform="translate(-115 17)">
+    <rect id="Rectangle_22" data-name="Rectangle 22" class="cls-1" width="185" height="44" transform="translate(808 518)"/>
+    <g id="Group_43" data-name="Group 43" transform="translate(14)">
+      <text id="_" data-name="" class="cls-2" transform="translate(824 548)"><tspan x="0" y="0"></tspan></text>
+      <text id="Facebook" class="cls-3" transform="translate(852 547)"><tspan x="0" y="0">Facebook</tspan></text>
+    </g>
+  </g>
+</svg>
