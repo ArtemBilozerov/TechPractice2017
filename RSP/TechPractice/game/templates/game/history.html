@@ -1,36 +1,33 @@
 {% extends 'game/index.html' %}
 
 {% block content %}
-<div class="container">
-  <table class="table">
-    <thead>
-      <tr>
-        <th>Date</th>
-        <th>You</th>
-        <th>Opponent</th>
-        <th>Result</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th>17:10 06.06.2017</th>
-        <th>Rock</th>
-        <th>Scissors</th>
-        <th  class="success">Won</th>
-      </tr>
-      <tr>
-        <th>17:12 06.06.2017</th>
-        <th>Rock</th>
-        <th>Paper</th>
-        <th class="danger">Loss</th>
-      </tr>
-      <tr class="info">
-        <th>17:14 06.06.2017</th>
-        <th>Rock</th>
-        <th>Rock</th>
-        <th class="info">Draw</th>
-      </tr>
-    </tbody>
-  </table>
-</div>
+
+    <div class="container">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>You</th>
+            <th>Opponent</th>
+            <th>Result</th>
+          </tr>
+        </thead>
+      </table>
+    </div>
+    {% for game in games %}
+        <div class="container">
+          <table class="table">
+            <tbody>
+              <tr>
+                <th>{{ game.Time }}</th>
+                <th>{{ game.Bet1.Name }}</th>
+                <th>{{ game.Bet2.Name }}</th>
+                <th  class="success">Won</th>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+    {% endfor %}
+
+
 {% endblock %}

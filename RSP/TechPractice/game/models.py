@@ -1,5 +1,6 @@
 from django.contrib.auth.models import User
 from django.db import models
+from datetime import datetime
 
 # Create your models here.
 class Item(models.Model):
@@ -19,7 +20,7 @@ class Player(User):
         return self.username
 
 class Game(models.Model):
-    Time = models.DateTimeField
+    Time = models.DateTimeField(default=datetime.now())
     User1 = models.ForeignKey(User, related_name='firstuser')
     User2 = models.ForeignKey(User, related_name='seconduser', default=1)
     Bet1 = models.ForeignKey(Item, related_name='firstuserbet')

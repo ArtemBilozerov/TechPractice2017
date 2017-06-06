@@ -1,5 +1,6 @@
 
 from django.shortcuts import render
+from game.models import Game
 # Create your views here.
 
 def home(request):
@@ -12,7 +13,11 @@ def stats(request):
 
 def history(request):
     #return HttpResponse('Hello world')
-    return render(request, 'game/history.html')
+    playedgames = Game.objects.all()[:10]
+    context = {
+        'games': playedgames
+    }
+    return render(request, 'game/history.html', context)
 
 def games(request):
     #return HttpResponse('Hello world')
