@@ -1,22 +1,25 @@
 
-{% extends 'game/index.html' %}
 {% load staticfiles %}
-{% block form %}
+{% block content %}
+    <link href="{% static 'game/css/theme.css' %}" rel="stylesheet">
     <form action="#" class="login_form" class="row">
         <div class="col-lg-3 col-md-3"></div>
         <div class="col-lg-6 col-md-6">
-            <div class="input-group" >
+            <div class="input-group ig1" >
                 <span class="input-group-addon" id="basic-addon1"><img src="{% static 'game/icons/mail.svg' %}"></span>
                 <input type="text" class="form-control" placeholder="Login" aria-describedby="basic-addon1">
             </div>
 
-            <div class="input-group">
+            <div class="input-group ig1">
                 <span class="input-group-addon" id="basic-addon2"><img src="{% static 'game/icons/lock.svg' %}"></span>
                 <input type="text" class="form-control" placeholder="Password" aria-describedby="basic-addon1">
             </div>
-
-            <button type="button" class="btn btn-primary">Log in</button>
+            <div class="btn1">
+                <button type="button" class="btn btn-primary btn1">Log in</button>
+            </div>
         </div>
         <div class="col-lg-3 col-md-3"></div>
     </form>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="{% static 'game/js/bootstrap.min.js' %}"></script>
 {% endblock %}
