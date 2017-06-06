@@ -12,6 +12,11 @@ class Items(models.Model):
     def __str__(self):
         return  self.Name
 
+class Players(User):
+    Wins = models.CharField(default=0, max_length=16)
+    Loses = models.CharField(default=0, max_length=16)
+    def __str__(self):
+        return self.id
 
 class Games(models.Model):
     Time = models.DateTimeField
