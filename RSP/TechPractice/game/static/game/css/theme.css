@@ -6264,29 +6264,21 @@ label {
   box-shadow: inset 0 2px 0 rgba(0, 0, 0, 0.05);
 }
 .panel {
-  /*border: 1px solid #ffffff;*/
+  border: 1px solid #ffffff;
   border-width: 0 1px 4px 1px;
 }
 .nav-image {
-    max-height: 25px;
-    display: inline-block;
-    float: left;
+    height: 20px;
+    margin-left: 60px;
+    margin-right: -27px;
 }
 .nav > li {
-  width: 200px;
 }
 .nav > li > a {
-    position: relative;
-    display: inline-grid;
-    padding: 10px 50px 15px;
+  font-size: 18px;
 }
-.navbar-nav > li > a > p {
-    margin: 0 0 10px;
-    padding-top: inherit;
-}
-
-.nav > ul {
-    margin-top: 20px;
+.navbar-right {
+  padding: 40px 40px 40px 15px;
 }
 .login_form {
   margin: auto;
@@ -6328,4 +6320,26 @@ th {
 table {
   background-color: #eff4f8;
   border-radius: 5px;
+}
+.choise {
+  display: block;
+}
+.choise > div > p {
+  text-align: center;
+  font-size: 28px;
+  color: #3f93e9;
+}
+.choise > div {
+  display: inline;
+}
+.choise_icon {
+  padding: 150px 50px 20px 50px;
+}
+.choise_icon > a > img {
+  padding-bottom: 20px;
+}
+.choise_icon > a > img:hover {
+  border-bottom-color: #3f93e9;
+  border-bottom-width: 5px;
+  border-bottom-style: solid;
 }
