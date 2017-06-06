@@ -13,13 +13,6 @@ class Items(models.Model):
         return  self.Name
 
 
-#class User(models.Model):
-#    Name = models.CharField(max_length=20)
-#    Surname = models.CharField(max_length=20)
-#    Email = models.CharField(max_length=30)
-#    Password = models.CharField(max_length=30)
-#    RegDate = models.DateField
-
 class Games(models.Model):
     Time = models.DateTimeField
     User1 = models.ForeignKey(User, related_name='firstuser')

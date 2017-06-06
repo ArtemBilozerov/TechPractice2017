@@ -1,8 +1,8 @@
-from django.http import HttpResponse
+
 from django.shortcuts import render
 
 # Create your views here.
 
-def home(self):
+def home(request):
     #return HttpResponse('Hello world')
-    return render(self, 'game/index.html')
+    return render(request, 'game/login_form.html')
