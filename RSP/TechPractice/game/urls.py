@@ -22,5 +22,6 @@ urlpatterns = [
     url(r'^stats', views.stats, name='stats'),
     url(r'^games', views.games, name='games'),
     url(r'^history', views.history, name='history'),
+    url(r'^choise', views.history, name='history'),
     url(r'^', views.home, name='home'),
 ]
