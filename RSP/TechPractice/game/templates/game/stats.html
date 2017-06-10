@@ -3,38 +3,38 @@
 {% block content %}
 
     <div class="stats">
-    	<div>
-    		<a href="#"><img class="arrow_img" src="{% static 'game/icons/arrow.svg' %}">
-    		Top players
-    		</a>
-    		<a href="#"><img class="arrow_img flipped_img" src="{% static 'game/icons/arrow.svg' %}">
-    		Not top players
-    		</a>
-    	</div>
-		  <table class="table">
-		    <thead>
-		      <tr>
-		        <th></th>
-		        <th>Wons</th>
-		        <th>Loses</th>
-		        <th>Total matches</th>
-		        <th>Winrate</th>
-		        <th style="border-right: none;">Join date</th>
-		      </tr>
-		    </thead>
-              {% for player in players %}
+        <div>
+            <a href="#"><img class="arrow_img" src="{% static 'game/icons/arrow.svg' %}">
+                Top players
+            </a>
+            <a href="#"><img class="arrow_img flipped_img" src="{% static 'game/icons/arrow.svg' %}">
+                Not top players
+            </a>
+        </div>
+        <table class="table">
+            <thead>
+            <tr>
+                <th></th>
+                <th>Wins</th>
+                <th>Loses</th>
+                <th>Draws</th>
+                
+                <th style="border-right: none;">Join date</th>
+            </tr>
+            </thead>
+            {% for game in games %}
                 <tbody>
-                  <tr>
-                    <th>{{ player.username }}</th>
-                    <th>{{ player.Wins }}</th>
-                    <th>{{ player.Loses }}</th>
-                    <th>{{ player.Wins}}+{{player.Loses }}</th>
-                    <th>{{ player.Wins}}+{{player.Loses }} / {{ player.Wins }}</th>
-                    <th style="border-right: none;">{{ player.date_joined }}</th>
-                  </tr>
+                <tr>
+                    <th>{{ game.username }}</th>
+                    <th>{{ game.win }}</th>
+                    <th>{{ game.lose }}</th>
+                    <th>{{ game.drow }}</th>
+
+                    <th style="border-right: none;">{{ game.time }}</th>
+                </tr>
                 </tbody>
-              {% endfor %}
-		  </table>
-		</div>
+            {% endfor %}
+        </table>
+    </div>
 
 {% endblock %}

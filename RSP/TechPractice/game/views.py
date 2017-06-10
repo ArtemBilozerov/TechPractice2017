@@ -1,4 +1,4 @@
-
+from collections import Iterator
 from django.shortcuts import render
 from django.contrib import auth
 from  django.template.context_processors import csrf
@@ -10,9 +10,6 @@ from django.contrib import contenttypes
 # Create your views here.
 
 def home(request):
-    users = User.objects.all()[:20]
-    for user in users:
-        Game.objects.get(user1login=user.username)
     if auth.get_user(request).is_authenticated:
         print(auth.get_user(request).username)
         return render(request,'game/start.html')
@@ -41,13 +38,38 @@ def logout(request):
     print('2223')
     auth.logout(request)
     return render(request,'game/login_form.html')
+class Plgame():
+    win = 0
+    lose = 0
+    drow = 0
+    username = ''
+    time = datetime.now()
+    def __init__(self,w,l,d,u,t):
+        self.win = w
+        self.lose = l
+        self.drow = d
+        self.username = u
+        self.time = t
 
 def stats(request):
     #return HttpResponse('Hello world')}
-    context = {
 
-    }
-    return render(request, 'game/stats.html', context)
+    glist = []
+    users = User.objects.all()[:20]
+    print(users)
+    for user in users:
+        glist.append(Plgame(
+            Game.objects.all().filter(user1login=user.username, result='win').count(),
+            Game.objects.all().filter(user1login=user.username, result='lose').count(),
+            Game.objects.all().filter(user1login=user.username, result='drow').count(),
+            user.username,
+            user.date_joined,
+
+        ))
+    context = iter(glist)
+    pgame = {'games': context}
+    print(context)
+    return render(request, 'game/stats.html', pgame)
 
 def history(request):
     items = {'1': 'rock', '2': 'scissors', '3': 'paper'}
@@ -73,7 +95,7 @@ def choiced(request, bet):
     print(bet[0])
     if bet[0] == str(botchoise):
         result = 'drow'
-    elif (bet[0] == '1' and botchoise == 2)\
+    elif (bet[0] == '1' and botchoise == 2) \
             or (bet[0] == '2' and botchoise == 3) or (bet[0] == '3' and botchoise == 1):
         result = 'win'
     else:
