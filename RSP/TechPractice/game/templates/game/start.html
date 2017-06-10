@@ -1,10 +1,8 @@
 {% extends 'game/index.html' %}
 
 {% block content %}
-<div class="col-lg-4 col-md-4"></div>
-<div class="start col-lg-4 col-md-4">
-	<a href="{% url 'choice' %}" type="button" class="btn btn-primary">Start game</a>
-</div>
-<div class="col-lg-4 col-md-4"></div>
+    <div class="start">
+        <a href="{% url 'choice' %}"> <button type="button" class="btn btn-primary">Start game</button></a>
+    </div>
 {% endblock %}
 

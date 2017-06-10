@@ -73,7 +73,7 @@ def stats(request):
 
 def history(request):
     items = {'1': 'rock', '2': 'scissors', '3': 'paper'}
-    pgame = Game.objects.order_by('-time')[:20]
+    pgame = Game.objects.order_by('-time').filter(user1login=auth.get_user(request).username)[:20]
     for gg in pgame:
         gg.bet1 = items[gg.bet1]
         gg.bet2 = items[gg.bet2]

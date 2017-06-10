@@ -19,15 +19,13 @@
 <div class="navbar navbar-default">
     <div class="navbar-collapse collapse navbar-responsive-collapse">
         <ul class="nav navbar-nav">
-            <li><a href="{% url 'games' %}"><img class="nav-image" src="{% static 'game/icons/gaypad.svg' %}"></a></li>
+            <li class="nav-image"><a href="{% url 'games' %}"><img src="{% static 'game/icons/gaypad.svg' %}"></a></li>
             <li><a href="{% url 'games' %}">Games</a></li>
-            <li><a href="{% url 'history' %}"><img class="nav-image" src="{% static 'game/icons/clock.svg' %}"></a></li>
+            <li class="nav-image"><a href="{% url 'history' %}"><img src="{% static 'game/icons/clock.svg' %}"></a></li>
             <li><a href="{% url 'history' %}">History</a></li>
-            <li><a href="{% url 'stats' %}"><img class="nav-image" src="{% static 'game/icons/list.svg' %}"></a></li>
+            <li class="nav-image"><a href="{% url 'stats' %}"><img src="{% static 'game/icons/list.svg' %}"></a></li>
             <li><a href="{% url 'stats' %}">Stats</a></li>
-        </ul>
-        <ul class="nav navbar-nav navbar-right">
-            <li><a href="/logout" type="button" class="btn btn-primary">Log out</a></li><!--do smth here -->
+            <li class="logout_li"><a href="/logout"><button type="button" class="btn btn-primary">Log out</button></a></li>
         </ul>
     </div>
 </div>
