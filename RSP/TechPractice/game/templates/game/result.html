@@ -1,10 +1,54 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'game/index.html' %}
+{% load staticfiles %}
 
-</body>
-</html>
+{% block content %}
+    <div class="row">
+        <div class="col-lg-2 col-md-2"></div>
+        <div class="result col-lg-8 col-md-8">
+            <div>
+                {% if result == 'win' %}
+                    <h1>Good luck<br>You won</h1>
+                {% endif %}
+                {% if result == 'lose' %}
+                    <h1>Bad luck<br>You lost</h1>
+                {% endif %}
+                {% if result == 'drow' %}
+                    <h1>It`s a<br>drow</h1>
+                {% endif %}
+            </div>
+            <div class="row">
+                <div class="col-lg-1 col-md-1"></div>
+                <div class="col-lg-3 col-md-3">
+                    <p>Your choise:</p>
+                    {% if bet1 == '1' %}
+                        <img src="{% static 'game/icons/fisting.svg' %}">
+                    {% endif %}
+                    {% if bet1 == '2' %}
+                        <img src="{% static 'game/icons/scissors.svg' %}">
+                    {% endif %}
+                    {% if bet1 == '3' %}
+                        <img src="{% static 'game/icons/seig_heil.svg' %}">
+                    {% endif %}
+                </div>
+                <div class="col-lg-4 col-md-4"></div>
+                <div class="col-lg-3 col-md-3">
+                    <p>Opponent choise:</p>
+                    {% if bet2 == 1 %}
+                        <img src="{% static 'game/icons/fisting.svg' %}">
+                    {% endif %}
+                    {% if bet2 == 2 %}
+                        <img src="{% static 'game/icons/scissors.svg' %}">
+                    {% endif %}
+                    {% if bet2 == 3 %}
+                        <img src="{% static 'game/icons/seig_heil.svg' %}">
+                    {% endif %}
+                </div>
+                <div class="col-lg-1 col-md-1"></div>
+            </div>
+            <div class="row">
+                <a href="{% url 'start' %}" class="alert-info">try again</a>
+            </div>
+        </div>
+        <div class="col-lg-2 col-md-2"></div>
+    </div>
+{% endblock %}

@@ -1,1 +1,40 @@
 {% extends 'game/index.html' %}
+{% load staticfiles %}
+{% block content %}
+
+    <div class="stats">
+    	<div>
+    		<a href="#"><img class="arrow_img" src="{% static 'game/icons/arrow.svg' %}">
+    		Top players
+    		</a>
+    		<a href="#"><img class="arrow_img flipped_img" src="{% static 'game/icons/arrow.svg' %}">
+    		Not top players
+    		</a>
+    	</div>
+		  <table class="table">
+		    <thead>
+		      <tr>
+		        <th></th>
+		        <th>Wons</th>
+		        <th>Loses</th>
+		        <th>Total matches</th>
+		        <th>Winrate</th>
+		        <th style="border-right: none;">Join date</th>
+		      </tr>
+		    </thead>
+              {% for player in players %}
+                <tbody>
+                  <tr>
+                    <th>{{ player.username }}</th>
+                    <th>{{ player.Wins }}</th>
+                    <th>{{ player.Loses }}</th>
+                    <th>{{ player.Wins}}+{{player.Loses }}</th>
+                    <th>{{ player.Wins}}+{{player.Loses }} / {{ player.Wins }}</th>
+                    <th style="border-right: none;">{{ player.date_joined }}</th>
+                  </tr>
+                </tbody>
+              {% endfor %}
+		  </table>
+		</div>
+
+{% endblock %}

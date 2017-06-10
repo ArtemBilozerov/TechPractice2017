@@ -1,1 +1,11 @@
 {% extends 'game/index.html' %}
+{% load staticfiles %}
+{% block content %}
+   <div class="container theme-showcase" role="main">
+    	<div class="game_mode">
+	        	<a href="{% url 'start' %}"><img src="{% static 'game/icons/man.svg' %}">Game against another player</a><br>
+	            <a href="{% url 'start' %}"><img src="{% static 'game/icons/bot.svg' %}">Game against bot</a><br>
+	            <a href="{% url 'start' %}"><img src="{% static 'game/icons/abot.svg' %}">Game against advanced bot</a>
+		</div>
+    </div>
+{% endblock %}

@@ -1,7 +1,6 @@
 {% extends 'game/index.html' %}
 
 {% block content %}
-
     <div class="container">
       <table class="table ">
         <thead>
@@ -19,10 +18,10 @@
           <table class="table nomargin">
             <tbody>
               <tr class="history_tr">
-                <th>{{ game.Time }}</th>
-                <th>{{ game.Bet1.Name }}</th>
-                <th>{{ game.Bet2.Name }}</th>
-                <th  class="success">Won</th>
+                <th>{{ game.time }}</th>
+                <th>{{ game.bet1 }}</th>
+                <th>{{ game.bet2 }}</th>
+                <th>{{ game.result }}</th>
               </tr>
             </tbody>
           </table>

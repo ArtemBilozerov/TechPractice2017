@@ -1,21 +1,49 @@
-
 {% load staticfiles %}
 {% block content %}
     <link href="{% static 'game/css/theme.css' %}" rel="stylesheet">
-    <form action="#" class="login_form" class="row">
+    <script>
+        window.fbAsyncInit = function () {
+            FB.init({
+                appId: '262107047597955',
+                autoLogAppEvents: true,
+                xfbml: true,
+                version: 'v0.9'
+            });
+            FB.AppEvents.logPageView();
+        };
+
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) {
+                return;
+            }
+            js = d.createElement(s);
+            js.id = id;
+            js.src = "//connect.facebook.net/en_US/sdk.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+    <form action="/login" method="post" class="login_form" class="row">
+        {% csrf_token %}
         <div class="col-lg-3 col-md-3"></div>
         <div class="col-lg-6 col-md-6">
-            <div class="input-group ig1" >
+            <div class="input-group ig1">
                 <span class="input-group-addon" id="basic-addon1"><img src="{% static 'game/icons/mail.svg' %}"></span>
-                <input type="text" class="form-control" placeholder="Login" aria-describedby="basic-addon1">
+                <input type="text" name="username" class="form-control" placeholder="Login" aria-describedby="basic-addon1">
             </div>
 
             <div class="input-group ig1">
                 <span class="input-group-addon" id="basic-addon2"><img src="{% static 'game/icons/lock.svg' %}"></span>
-                <input type="password" class="form-control" placeholder="Password" aria-describedby="basic-addon1">
+                <input type="password" name="password" class="form-control" placeholder="Password" aria-describedby="basic-addon1">
             </div>
             <div class="btn1">
-                <button type="button" class="btn btn-primary btn1">Log in</button>
+                <div>
+                    <input type="submit" class="btn btn-primary btn1" value="Log in">
+                </div>
+                <div class="fb-login-button fbbutton" data-max-rows="1" data-size="large"
+                     data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="true"
+                     data-use-continue-as="false">
+                </div>
             </div>
         </div>
         <div class="col-lg-3 col-md-3"></div>

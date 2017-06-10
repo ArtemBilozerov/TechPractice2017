@@ -22,6 +22,13 @@ urlpatterns = [
     url(r'^stats', views.stats, name='stats'),
     url(r'^games', views.games, name='games'),
     url(r'^history', views.history, name='history'),
-    url(r'^choise', views.history, name='history'),
+
+    url(r'^choiced/rock', views.choiced, {'bet': '1'}, name='rock'),
+    url(r'^choiced/scissors', views.choiced, {'bet': '2'}, name='scissors'),
+    url(r'^choiced/paper', views.choiced, {'bet': '3'}, name='paper'),
+    url(r'^choice', views.choice, name='choice'),
+    url(r'^start', views.start, name='start'),
+    url(r'^logout', views.logout, name='logout'),
+    url(r'^login', views.login, name='login'),
     url(r'^', views.home, name='home'),
 ]

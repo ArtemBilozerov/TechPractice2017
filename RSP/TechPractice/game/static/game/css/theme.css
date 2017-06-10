@@ -3548,8 +3548,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
     float: left;
   }
   .navbar-nav > li > a {
-    padding-top: 40px;
-    padding-bottom: 40px;
+    margin-top: 40px;
+    margin-bottom: 40px;
   }
 }
 .navbar-form {
@@ -6298,8 +6298,9 @@ label {
   border-radius: 8px;
 }
 .btn1 {
-  width: 100%;
-  text-align: center;
+    width: 100%;
+    margin: 0;
+    text-align: center;
 }
 .input-group-addon > img {
   height: 20px;
@@ -6312,7 +6313,7 @@ label {
 }
 .btn {
   border-radius: 25px;
-  width: 300px;
+  width: 250px;
 }
 th {
   color: #3f93e9;
@@ -6349,4 +6350,81 @@ table {
 
 .nomargin {
     margin: 0;
+}
+.fbbutton {
+    margin: 0;
+    height: 18px;
+}
+.result {
+  padding: 30px 70px;
+  background-color: #eff4f8;
+  border: 2px;
+  border-style: solid;
+  border-color: #3f93e9;
+  border-radius: 15px;
+  text-align: center;
+}
+.result > div {
+  margin: 40px 0px;
+}
+.start > button {
+  position: absolute;
+  top: 300px;
+  margin: 0px 100px 100px 50px;
+  width: 300px;
+  height: 85px;
+  border-radius: 45px;
+  align-self: center;
+  font-size: 30px;
+  text-transform: none;
+}
+.flipped_img {
+  margin-left: 25px;
+  -moz-transform: scaleY(-1);
+  -o-transform: scaleY(-1);
+  -webkit-transform: scaleY(-1);
+  transform: scaleY(-1);
+  filter: FlipH;
+  -ms-filter: "FlipH";
+}
+.arrow_img {
+  height: 18px;
+}
+.stats > div > a {
+  font-size: 18px;
+  color: #000;
+}
+.stats > div {
+  padding-bottom: 20px;
+}
+.stats {
+  background-color: #eff4f8;
+  border-radius: 5px;
+  padding: 20px;
+}
+.th_wihtout_border {
+  border-right: none;
+}
+.stats > table > tbody > tr > th{
+ width: 16.666666%;
+ border-right: solid 1px #bbb;
+}
+.stats > table > thead > tr > th{
+ width: 16.666666%;
+ border-right: solid 1px #bbb;
+}
+.game_mode {
+  background-color: #eff4f8;
+  border-radius: 5px;
+  padding: 20px;
+}
+.game_mode > a {
+  margin: : 30px 0px;
+  color: #000;
+  font-size: 20px;
+}
+.game_mode > a > img {
+  padding-right: 10px;
+  height: 35px;
+  width: 38px;
 }
