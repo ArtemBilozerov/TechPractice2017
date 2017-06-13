@@ -6297,8 +6297,8 @@ label {
 }
 .btn1 {
     width: 100%;
-    margin: 0;
     text-align: center;
+    margin: 10px;
 }
 .input-group-addon > img {
   height: 20px;
@@ -6351,6 +6351,7 @@ table {
 .fbbutton {
     margin: 0;
     margin-top: 5px;
+    margin-left: 20px;
     height: 18px;
 }
 .result {
@@ -6420,7 +6421,7 @@ table {
   padding: 20px;
 }
 .game_mode > a {
-  margin: : 30px 0px;
+  margin: 30px 0px;
   color: #000;
   font-size: 20px;
 }
@@ -6433,7 +6434,7 @@ table {
   float: right !important;
 }
 .logout_li > a > button {
-  border-bottom: 0px;
+  border-bottom: 0;
 }
 .logout_li > a {
   padding-bottom: 33px !important;
@@ -6447,10 +6448,10 @@ table {
     display: block;
   }
   .nav-image {
-    height: 0px;
+    height: 0;
   }
   .nav-image > a > img{
-    height: 0px;
+    height: 0;
   }
   .navbar-nav > li > a {
     text-align: center;
@@ -6463,7 +6464,7 @@ table {
   }
   .navbar-nav {
     padding: 20px 15px;
-    margin: 0px;
+    margin: 0;
   }
   .start > a > button {
     top: 180px;
@@ -6471,8 +6472,8 @@ table {
 }
 @media (max-width: 600px) {
   .start {
-    padding: 0px 17%;
-    margin: 0px;
+    padding: 0 17%;
+    margin: 0;
   }
 }
 

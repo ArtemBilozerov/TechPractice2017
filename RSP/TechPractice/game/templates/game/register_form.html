@@ -23,7 +23,7 @@
             fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));
     </script>
-    <form action="/login" method="post" class="login_form" class="row">
+    <form action="/register" method="post" class="login_form" class="row">
         {% csrf_token %}
         <div class="col-lg-3 col-md-3"></div>
         <div class="col-lg-6 col-md-6">
@@ -34,24 +34,27 @@
 
             <div class="input-group ig1">
                 <span class="input-group-addon" id="basic-addon2"><img src="{% static 'game/icons/lock.svg' %}"></span>
-                <input type="password" name="password" class="form-control" placeholder="Password" aria-describedby="basic-addon1">
+                <input type="password" name="password1" class="form-control" placeholder="Password" aria-describedby="basic-addon1">
             </div>
-            {% if error %}
-                <label class="btn1">{{ error }}</label>
+            <div class="input-group ig1">
+                <span class="input-group-addon" id="basic-addon2"><img src="{% static 'game/icons/lock.svg' %}"></span>
+                <input type="password" name="password2" class="form-control" placeholder="Repeat password" aria-describedby="basic-addon1">
+            </div>
+            {% if form %}
+                <label class="btn1">{{ form.error_messages.popitem }}</label>
             {% endif %}
             <div class="btn1">
                 <div>
-                    <input type="submit" class="btn btn-primary btn1" value="Log in">
+                    <input type="submit" class="btn btn-primary btn1" value="OK">
                 </div>
                 <div>
-                    <a href="{% url 'register' %}" class="btn btn-primary btn1">Register</a>
+                    <a href="{% url 'login' %}" class="btn btn-primary btn1">Log in</a>
                 </div>
-                
-            </div>
-            <div class="fb-login-button fbbutton" data-max-rows="1" data-size="large"
+                <div class="fb-login-button fbbutton" data-max-rows="1" data-size="large"
                      data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="true"
                      data-use-continue-as="false">
                 </div>
+            </div>
         </div>
         <div class="col-lg-3 col-md-3"></div>
     </form>

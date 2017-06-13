@@ -6,6 +6,7 @@ from game.models import Game, Item
 import random
 from  datetime import datetime
 from  django.contrib.auth.models import User
+from django.contrib.auth.forms import UserCreationForm
 from django.contrib import contenttypes
 # Create your views here.
 
@@ -38,6 +39,22 @@ def logout(request):
     print('2223')
     auth.logout(request)
     return render(request,'game/login_form.html')
+
+def reg(request):
+    args = {}
+    args.update(csrf(request))
+
+    if request.POST:
+        newuser = UserCreationForm(request.POST)
+        if newuser.is_valid():
+            newuser.save()
+            newuser = auth.authenticate(username=newuser.cleaned_data['username'], password=newuser.cleaned_data['password2'])
+            return render(request, 'game/start.html')
+        else:
+            args['form'] = newuser
+    return render(request, 'game/register_form.html', args)
+
+
 class Plgame():
     win = 0
     lose = 0
@@ -83,6 +100,8 @@ def history(request):
 def games(request):
     #return HttpResponse('Hello world')
     return render(request, 'game/games.html')
+
+
 
 def choice(request):
     print('choice')
